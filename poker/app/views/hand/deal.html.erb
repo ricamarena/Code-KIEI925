@@ -1,17 +1,17 @@
 <h1> Casino Night! </h1>
 
+<h3> Your cards: </h3>
+<p>   </p>
 <p> 
-	<% number = ["Ace",2,3,4,5,6,7,8,9,10,"jack","queen","king"]%>
-	<% suit = ["diamonds","hearts","clubs","spades"] %>
+	<% numbers = ["ace",2,3,4,5,6,7,8,9,10,"jack","queen","king"]
+	suit = ["diamonds","hearts","clubs","spades"] 
+	deck = numbers.product(suit)
+	cards = deck.sample(5)
+	%>
 
-	<img src="http://golearntocode.com/images/cards/<%= number.sample%>_of_<%= suit.sample%>.png" width=10% height=10%>
-
-	<img src="http://golearntocode.com/images/cards/<%= number.sample%>_of_<%= suit.sample%>.png" width=10% height=10%>
-		
-	<img src="http://golearntocode.com/images/cards/<%= number.sample%>_of_<%= suit.sample%>.png" width=10% height=10%>
+	<% cards.each do |card| %>
+		<img src="http://golearntocode.com/images/cards/<%= card.first%>_of_<%= card.second%>.png" width=10% height=10%>
 	
-	<img src="http://golearntocode.com/images/cards/<%= number.sample%>_of_<%= suit.sample%>.png" width=10% height=10%>
-		
-	<img src="http://golearntocode.com/images/cards/<%= number.sample%>_of_<%= suit.sample%>.png" width=10% height=10%>
-
+	<%end%>
+	
 </p>
