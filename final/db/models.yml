@@ -1,57 +1,26 @@
-News:
-  title: string
+Project:
+  name: string
+  location: string
   summary: text
-  author_id: integer
-  content: string
-  source_id: integer
-  date: string
-  time: string
+  owner_id: integer
+  image: string
+  raised: integer
+  goal: integer
 
-Source:
-  name: text
-  website: text
+User:
+  name: string
+  username: string
+  bio: text
+  password: string
+  cashavailable: float
+  cashinvested: float
+
+Owner:
+  name: string
   summary: string
-  facebook: string
-  twitter: string
+  rating: integer
 
-Author:
-  name: string
-  work: string
-  bio: text
+Investment:
+  project_id: integer
   user_id: integer
-  facebook: string
-  twitter: string
-  linkedin: string
-  blog: string
-
-Person:
-  name: string
-  bio: text
-  user_id: integer
-  facebook: string
-  twitter: string
-  linkedin: string
-  blog: string
-
-Fund:
-  name: string
-  website: text
-  targettype: string
-  targetamount: integer
-  facebook: string
-  twitter: string
-  linkedin: string
-
-Company:
-  name: string
-  website: text
-  summary: text
-  facebook: string
-  twitter: string
-  linkedin: string
-
-Manager:
-  person_id: integer
-  company_id: integer
-  fund_id: integer
-  current: boolean
+  amount: integer

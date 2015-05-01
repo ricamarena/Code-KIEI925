@@ -13,80 +13,40 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "authors", force: true do |t|
-    t.string  "name"
-    t.string  "work"
-    t.text    "bio"
+  create_table "investments", force: true do |t|
+    t.integer "project_id"
     t.integer "user_id"
-    t.string  "facebook"
-    t.string  "twitter"
-    t.string  "linkedin"
-    t.string  "blog"
+    t.integer "amount"
   end
 
-  add_index "authors", ["user_id"], name: "index_authors_on_user_id"
+  add_index "investments", ["project_id"], name: "index_investments_on_project_id"
+  add_index "investments", ["user_id"], name: "index_investments_on_user_id"
 
-  create_table "companies", force: true do |t|
-    t.string "name"
-    t.string "website"
-    t.text   "summary"
-    t.string "facebook"
-    t.string "twitter"
-    t.string "linkedin"
-  end
-
-  create_table "funds", force: true do |t|
+  create_table "owners", force: true do |t|
     t.string  "name"
-    t.integer "website"
-    t.string  "targettype"
-    t.integer "targetamount"
-    t.string  "facebook"
-    t.string  "twitter"
-    t.string  "linkedin"
-  end
-
-  create_table "managers", force: true do |t|
-    t.integer "person_id"
-    t.integer "company_id"
-    t.integer "fund_id"
-    t.boolean "current",    default: false
-  end
-
-  add_index "managers", ["company_id"], name: "index_managers_on_company_id"
-  add_index "managers", ["fund_id"], name: "index_managers_on_fund_id"
-  add_index "managers", ["person_id"], name: "index_managers_on_person_id"
-
-  create_table "news", force: true do |t|
-    t.string  "title"
-    t.text    "summary"
-    t.integer "author_id"
-    t.string  "content"
-    t.integer "source_id"
-    t.string  "date"
-    t.string  "time"
-  end
-
-  add_index "news", ["author_id"], name: "index_news_on_author_id"
-  add_index "news", ["source_id"], name: "index_news_on_source_id"
-
-  create_table "people", force: true do |t|
-    t.string  "name"
-    t.text    "bio"
-    t.integer "user_id"
-    t.string  "facebook"
-    t.string  "twitter"
-    t.string  "linkedin"
-    t.string  "blog"
-  end
-
-  add_index "people", ["user_id"], name: "index_people_on_user_id"
-
-  create_table "sources", force: true do |t|
-    t.string  "name"
-    t.integer "website"
     t.string  "summary"
-    t.string  "facebook"
-    t.string  "twitter"
+    t.integer "rating"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string  "name"
+    t.string  "location"
+    t.text    "summary"
+    t.integer "owner_id"
+    t.integer "raised"
+    t.integer "goal"
+    t.string  "image"
+  end
+
+  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id"
+
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "username"
+    t.text   "bio"
+    t.string "password"
+    t.float  "cashavailable"
+    t.float  "cashinvested"
   end
 
 end
