@@ -4,9 +4,33 @@ class ProjectsController < ApplicationController
     @projects=Project.all
   end
 
- def show
+  def show
 	@project=Project.find_by(id: params["id"]) 
 	@investments = Investment.where(project_id: params["id"])
+  end
+
+  def edit
+	@project=Project.find_by(id: params["id"]) 
+	@investments = Investment.where(project_id: params["id"])
+  end
+
+  def update
+  	Project.find_by(id: params["id"]).update_attribute(:name, params["project"]["name"])
+  	redirect_to projects_url
+  end
+
+  def destroy
+  	Project.delete(params["id"])
+  	redirect_to projects_url
+  end
+
+  def new
+    @project = Project.new
+  end
+
+  def create
+    Project.create(name: params["project"]["name"])
+    redirect_to projects_url
   end
 
 end
