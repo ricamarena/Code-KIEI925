@@ -16,15 +16,15 @@ house1 = Project.create(name: "Beach House", location: "Miami", image:"beach.jpg
 house2 = Project.create(name: "Country House", location: "Milwakee", image:"country.jpg", summary: "On the Country", owner_id: fivere.id, raised: "0", goal: "4000" )
 house3 = Project.create(name: "City House", location: "Chicago", image:"city.jpg", summary: "House on the City", owner_id: lp.id, raised: "0", goal: "3000")
 house4 = Project.create(name: "Apartment", location: "New York", image:"apartment.jpg", summary: "Big Apartment", owner_id: hydepark.id, raised: "0", goal: "2000")
-house5 = Project.create(name: "Condo", location: "Evanston", image:"condo.jpg", summary: "Small Condo", owner_id: "1", raised: bjb.id, goal: "1000")
+house5 = Project.create(name: "Condo", location: "Evanston", image:"condo.jpg", summary: "Small Condo", owner_id: bjb.id, raised: "0", goal: "1000")
 
 puts "Creating Users..."
-john = User.create(name: "John", username: "k5", bio:"I am Doe")
-doe = User.create(name: "Doe", username: "k4",  bio:"I am Doe")
-smith = User.create(name: "Smith", username: "k3",  bio:"I am Smith")
-jane = User.create(name: "Jane", username: "k2",  bio:"I am Jane")
-sparta = User.create(name: "Sparta", username: "k1",  bio:"I am Sparta")
-kellogg = User.create(name: "Kellogg", username: "k0",  bio:"I am Kellogg")
+john = User.create(name: "John", username: "ke5", bio:"I am Doe")
+doe = User.create(name: "Doe", username: "ke4",  bio:"I am Doe")
+smith = User.create(name: "Smith", username: "ke3",  bio:"I am Smith")
+jane = User.create(name: "Jane", username: "ke2",  bio:"I am Jane")
+sparta = User.create(name: "Sparta", username: "ke1",  bio:"I am Sparta")
+kellogg = User.create(name: "Kellogg", username: "ke0",  bio:"I am Kellogg")
 
 
 

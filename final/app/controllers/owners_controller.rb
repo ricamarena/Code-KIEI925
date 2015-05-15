@@ -6,7 +6,7 @@ class OwnersController < ApplicationController
 
   def show
   	@owners=Owner.all
-	@owner=Owner.find_by(id: params["id"]) 
+	  @owner=Owner.find_by(id: params["id"]) 
   end
 
   def destroy
@@ -15,20 +15,20 @@ class OwnersController < ApplicationController
   end
 
   def edit
-	@owner=Owner.find_by(id: params["id"]) 
+	  @owner=Owner.find_by(id: params["id"]) 
   end
 
   def update
   	Owner.update(params["id"], name: params["owner"]["name"], summary: params["owner"]["summary"],rating: params["owner"]["rating"])
     redirect_to owners_url
-  	end
+  end
 
   def new
     @owner = Owner.new
   end
 
   def create
-    Owner.create(name: params["owner"]["name"], summary: params["owner"]["summary"],rating: params["owner"]["rating"])
+    Owner.create(params["owner"])
     redirect_to owners_url
   end
 
